@@ -66,6 +66,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Views\WelcomePage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="Views\WelcomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 	</ItemGroup>

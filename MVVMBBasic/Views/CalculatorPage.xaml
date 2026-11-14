@@ -2,32 +2,35 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Views.CalculatorPage"
-             Title="מחשבון">
+             xmlns:vm="clr-namespace:ViewModels"
+             x:DataType="vm:CalculatorViewModel"
+             Title="{Binding Title}"                  
+             Shell.FlyoutBehavior="Disabled">
     
     <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
 
-        <Label Text="מחשבון פשוט" 
+        <Label Text="{Binding Title}"
                FontSize="28" 
                FontAttributes="Bold" 
                HorizontalOptions="Center" />
 
         <!-- תיבות קלט למספרים -->
-        <Entry x:Name="Number1Entry" 
+        <Entry Text="{Binding Num1}" 
                Placeholder="הכנס מספר ראשון" 
                Keyboard="Numeric" 
                HeightRequest="48" />
 
-        <Entry x:Name="Number2Entry" 
+        <Entry Text="{Binding Num2}" 
                Placeholder="הכנס מספר שני" 
                Keyboard="Numeric" 
                HeightRequest="48" />
 
         <!-- כפתורי פעולות החשבון -->
         <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="10" HeightRequest="50">
-            <Button Grid.Column="0" Text="+" Clicked="OnAddClicked" FontSize="20" />
-            <Button Grid.Column="1" Text="-" Clicked="OnSubtractClicked" FontSize="20" />
-            <Button Grid.Column="2" Text="*" Clicked="OnMultiplyClicked" FontSize="20" />
-            <Button Grid.Column="3" Text="/" Clicked="OnDivideClicked" FontSize="20" />
+            <Button Grid.Column="0" Text="+" Command="{Binding AddCommand}" Clicked="" FontSize="20" />
+            <Button Grid.Column="1" Text="-" Command="{Binding SubtractCommand}"  FontSize="20" />
+            <Button Grid.Column="2" Text="*" Command="{Binding MultiplyCommand}"  FontSize="20" />
+            <Button Grid.Column="3" Text="/" Command="{Binding DivideCommand}" FontSize="20" />
         </Grid>
         
         <!-- הצגת התוצאה באמצעות Border המודרני -->
@@ -38,7 +41,7 @@
 
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
                 <Label Text="התוצאה היא:" FontSize="20" FontAttributes="Bold" />
-                <Label x:Name="ResultLabel" Text="0" FontSize="20" FontAttributes="Bold" TextColor="Green" />
+                        <Label Text="{Bindint Result}" Text="0" FontSize="20" FontAttributes="Bold" TextColor="Green" />
             </HorizontalStackLayout>
         </Border>
 
