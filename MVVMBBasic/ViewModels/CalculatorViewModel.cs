@@ -1,4 +1,4 @@
-﻿using Android.App;
+﻿//using Android.App;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -63,8 +63,8 @@ namespace MVVMBBasic.ViewModels
         }
         public void Add()
         {
-            if(int.TryParse(num1, out int n1) and int.TryParse(num2, out int n2)){
-                Result = n1 + n2;
+            if(int.TryParse(Num1, out int n1) && int.TryParse(Num2, out int n2)){
+                Result = (n1 + n2).ToString();
             }
             else {
                 Result = "Invalid input - the input must be an integer";
@@ -72,8 +72,8 @@ namespace MVVMBBasic.ViewModels
         }
         public void Multiply()
         {
-            if (int.TryParse(num1, out int n1) and int.TryParse(num2, out int n2)){
-                Result = n1 + n2;
+            if (int.TryParse(Num1, out int n1) && int.TryParse(Num2, out int n2)){
+                Result = (n1 + n2).ToString();
             }
             else
             {
@@ -82,8 +82,8 @@ namespace MVVMBBasic.ViewModels
         }
         public void Divide()
         {
-            if (int.TryParse(num1, out int n1) and int.TryParse(num2, out int n2)){
-                Result = n1 + n2;
+            if (int.TryParse(Num1, out int n1) && int.TryParse(Num2, out int n2)){
+                Result = (n1 + n2).ToString();
             }
             else
             {
@@ -92,8 +92,8 @@ namespace MVVMBBasic.ViewModels
         }
         public void Subtract()
         {
-            if (int.TryParse(num1, out int n1) and int.TryParse(num2, out int n2)){
-                Result = n1 + n2;
+            if (int.TryParse(Num1, out int n1) && int.TryParse(Num2, out int n2)){
+                Result = (n1 + n2).ToString();
             }
             else
             {
