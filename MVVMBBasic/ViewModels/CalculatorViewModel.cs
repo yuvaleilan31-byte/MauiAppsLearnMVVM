@@ -6,7 +6,7 @@ using System.Windows.Input;
 using ViewModels;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace MVVMBBasic.ViewModels
+namespace ViewModels
 {
     internal class CalculatorViewModel:BaseViewModel
     {
@@ -27,7 +27,7 @@ namespace MVVMBBasic.ViewModels
             SubtractCommand = new Command(Subtract);
         }
 
-        String Result
+        public String Result
         {
             get => _result;
             set  {
@@ -38,7 +38,7 @@ namespace MVVMBBasic.ViewModels
             }
         }
 
-        String Num1
+        public String Num1
         {
             get => _num1;
             set {
@@ -49,7 +49,7 @@ namespace MVVMBBasic.ViewModels
                 }
             }
         }
-        String Num2
+        public String Num2
         {
             get => _num2;
             set

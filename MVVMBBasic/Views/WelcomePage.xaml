@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Views.WelcomePage"
@@ -35,43 +35,29 @@
                        TextColor="{StaticResource Primary}"/>
 
 
-                <!-- כפתור כניסה למערכת המפעיל את אירוע הלחיצה בקוד ביהיינד -->
-                <!--Clicked="OnClickCounterClicked"-->
-                <Button Text="מונה לחיצות"
-                        Command="{Binding NavigateToClickCounterCommand}"
+
+                <Button Text="calaulator"
+                        Command="{Binding NavigateToCalculatorCommand}"
                         FontAttributes="Bold"
                         CornerRadius="8"
                         HeightRequest="48"
                         Margin="0,5,0,0" />
 
-                <!-- כפתור אודותנו -->
-                <!--Clicked="OnAboutClicked"-->
-                <Button Text="אודותנו"
-                        Command="{Binding NavigateToAboutCommand}"
+                
+                <Button Text="calc age"
+                        Command="{Binding NavigateToCalcAgeCommand}"
                         FontAttributes="Bold"
                         CornerRadius="8"
                         HeightRequest="48"
                         Margin="0,5,0,0" />
-                <!--Command="{Binding NavigateToContactCommand}"-->
-                <!--Clicked="OnContactClicked"-->
-                <Button Text="צור קשר"
-                        Command="{Binding NavigateToContactCommand}"
+
+                <Button Text="Exchange"
+                        Command="{Binding NavigateToExchangeCommand}"
                         FontAttributes="Bold"
                         CornerRadius="8"
                         HeightRequest="48"
                         Margin="0,5,0,0" />
-                <Button Text="דף פנימי שלא בהמבורגר"
-                        Clicked="OnInternalClicked"
-                        FontAttributes="Bold"
-                        CornerRadius="8"
-                        HeightRequest="48"
-                        Margin="0,5,0,0" />
-                <Button Text="דף עם מאפיין בקוד אחורי"
-                        Clicked="OnSimplePageClicked"
-                        FontAttributes="Bold"
-                        CornerRadius="8"
-                        HeightRequest="48"
-                        Margin="0,5,0,0" />
+
 
 
             </VerticalStackLayout>

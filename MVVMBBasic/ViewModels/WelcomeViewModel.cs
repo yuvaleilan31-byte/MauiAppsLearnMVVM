@@ -7,34 +7,33 @@ namespace ViewModels
 {
     public class WelcomeViewModel : BaseViewModel
     {
-        public ICommand NavigateToClickCounterCommand { get; }
+        public ICommand NavigateToCalcAgeCommand { get; }
 
-        public ICommand NavigateToAboutCommand { get; }
+        public ICommand NavigateToCalculatorCommand { get; }
 
-        public ICommand NavigateToContactCommand { get; }
+        public ICommand NavigateToExchangeCommand { get; }
 
         public WelcomeViewModel()
         {
 
-            // נווט לדף מונה לחיצות
-            NavigateToContactCommand = new Command(async () => await Shell.Current.GoToAsync("OnContactClicked"));
 
-            //// נווט לדף אודות
-            //NavigateToAboutCommand = new Command(async () => await Shell.Current.GoToAsync("AboutPage"));
-
-            // נווט לדף הבית + שחרור ההמבורגר
-            NavigateToClickCounterCommand = new Command(async () =>
+            NavigateToCalcAgeCommand = new Command(async () =>
             {
                 //Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout; // 1. משחרר את החסימה
-                await Shell.Current.GoToAsync("//ClickCounterPage");          // 2. ניווט מוחלט (Absolute)
+                await Shell.Current.GoToAsync("//CalcAgePage");          // 2. ניווט מוחלט (Absolute)
             });
 
-            // נווט לדף אודות + שחרור ההמבורגר
-            NavigateToAboutCommand = new Command(async () =>
+            NavigateToCalculatorCommand = new Command(async () =>
             {
                 //Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout; // 1. משחרר את החסימה
-                await Shell.Current.GoToAsync("//AboutPage");         // 2. ניווט מוחלט (Absolute)
+                await Shell.Current.GoToAsync("//CalculatorPage");          // 2. ניווט מוחלט (Absolute)
             });
+            NavigateToExchangeCommand = new Command(async () =>
+            {
+                //Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout; // 1. משחרר את החסימה
+                await Shell.Current.GoToAsync("//ExchangePage");          // 2. ניווט מוחלט (Absolute)
+            });
+
 
             Title = "Welcome Page";
         }
