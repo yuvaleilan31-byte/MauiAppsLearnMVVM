@@ -12,7 +12,15 @@ namespace ViewModels
         public ICommand ExchangeCommand { get; }
 
         private string _number = "0";
+
+        // אני משתמשת במילון בשביל שליפה מהירה, וכדי לא לשכפל ערכים (לא ליצור שער חליפין אחד עבור דולר לאירו ואחד אחר עבר אירו לדולר
+        // אני משתמשת בקונבנציה לפיה המפתחות יהיו בצורה הבאה: מטבע ראשון, מקף תחתון, מטבע שני, כאשר המטבע הראשון הוא המטבע הראשון הקודם 
+        // באלפבית. לדוגמה, ישמר המפתח Dolar_Euro ולא Euro_Dolar. 
+        // הערך שישמר יהיה שער ההמרה של המטבע הראשון לשני (במכפלה)
         private static Dictionary<string, double> ExchangeRateDict = new Dictionary<string, double> { { "Euro_Sheckel", 3.57 }, { "Dolar_Euro", 0.91 }, { "Euro_Lisht",0.83 }, { "Dolar_Sheckel", 3.25 }, { "Dolar_Lisht", 0.76 }, { "Lisht_Sheckel", 4.28} };
+        
+        
+        // בכדי לאפשר רשימה דינמית של מטבעות אפשריים בממשק המשתמש, האפשרויות ישמרו במשתנה 
         private  static List<string> _options;
 
         private string _firstSelectedOption;
@@ -111,6 +119,11 @@ namespace ViewModels
         }
         private void CreateOptionList()
         {
+            // תנאי כניסה: לא מקבלת דבר
+            // תנאי יציאה: מאתחלת את המשתנה _options 
+            // כך שיכיל את כל סוגי המטבעות המופיעים במילון שערי ההמרה, ללא כפילויות.
+            // מאפשרת שינוי או הוספת שערי חליפין פעם אחת בלבד, במילון שערי ההמרה, ללא צורך בעדכון ידני של 
+            // רשימת האפשרויות
             List<string> speacialCurrencies = new List<string>(), entriesInExchangeRateDict = new List<string>(ExchangeViewModel.ExchangeRateDict.Keys);
             foreach (string key in entriesInExchangeRateDict)
             {
