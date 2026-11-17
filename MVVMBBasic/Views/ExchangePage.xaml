@@ -18,13 +18,21 @@
              HeightRequest="48"
              Margin="0,5,0,0" />
         
-        <Label Text="הזן כמות (בשקלים)"></Label>
-        <Entry Text="{Binding Sheckels}" 
+        <!--<Label Text="הזן כמות (בשקלים)"></Label> 
+        <Entry Text="{Binding CurrencyChosen}" 
            Placeholder="שקלים" 
            Keyboard="Numeric" 
            HeightRequest="48" />
-        <Label Text="בחר מטבע"></Label>
-        <Picker ItemsSource="{Binding Options}" SelectedItem="{Binding SelectedOption}" />
+        <Label Text="בחר מטבע"></Label>-->
+        <Entry Text="{Binding Number}" 
+       Placeholder="0" 
+       Keyboard="Numeric" 
+       HeightRequest="48" />
+        <Label Text="בחר מטבע ראשון"></Label>
+        <Picker ItemsSource="{Binding Options}" SelectedItem="{Binding FirstSelectedOption}" />
+        
+        <Label Text="בחר מטבע שני"></Label>
+        <Picker ItemsSource="{Binding Options}" SelectedItem="{Binding SecondSelectedOption}" />
 
         <Button Grid.Column="0" Text="המר" Command="{Binding ExchangeCommand}" FontSize="20" />
 
