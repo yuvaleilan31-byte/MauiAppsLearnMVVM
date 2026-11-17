@@ -11,6 +11,13 @@
 
         <!-- חובה לתת x:Name כדי שהקוד האחורי יכיר את הרכיב -->
         <!-- החלפה ב Binding YearOfBirth -->
+        <Button Text="return to welcome page"
+                Command="{Binding NavigateToWelcomeCommand}"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HeightRequest="48"
+                Margin="0,5,0,0" />
+        
         <Entry Text="{Binding YearOfBirth}" 
                Placeholder="הכנס שנת לידה (למשל: 1995)" 
                Keyboard="Numeric" />

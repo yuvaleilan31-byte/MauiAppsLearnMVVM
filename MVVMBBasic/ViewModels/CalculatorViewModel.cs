@@ -8,7 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ViewModels
 {
-    internal class CalculatorViewModel:BaseViewModel
+    public class CalculatorViewModel:BaseViewModel
     {
 
         public ICommand AddCommand { get; }
@@ -16,15 +16,18 @@ namespace ViewModels
         public ICommand DivideCommand { get; }
         public ICommand SubtractCommand { get; }
 
+        
+
         private string _result="";
         private string _num1="0";
         private string _num2="0";
-        public CalculatorViewModel(){
+        public CalculatorViewModel():base(){
             Title = "דף מחשבון";
-            AddCommand = new Command(Add);
-            MultiplyCommand = new Command(Multiply);
-            DivideCommand = new Command(Divide);
-            SubtractCommand = new Command(Subtract);
+            
+            this.AddCommand = new Command(Add);
+            this.MultiplyCommand = new Command(Multiply);
+            this.DivideCommand = new Command(Divide);
+            this.SubtractCommand = new Command(Subtract);
         }
 
         public String Result
@@ -73,7 +76,7 @@ namespace ViewModels
         public void Multiply()
         {
             if (int.TryParse(Num1, out int n1) && int.TryParse(Num2, out int n2)){
-                Result = (n1 + n2).ToString();
+                Result = (n1 * n2).ToString();
             }
             else
             {
@@ -83,7 +86,7 @@ namespace ViewModels
         public void Divide()
         {
             if (int.TryParse(Num1, out int n1) && int.TryParse(Num2, out int n2)){
-                Result = (n1 + n2).ToString();
+                Result = (n1 / n2).ToString();
             }
             else
             {
@@ -93,7 +96,7 @@ namespace ViewModels
         public void Subtract()
         {
             if (int.TryParse(Num1, out int n1) && int.TryParse(Num2, out int n2)){
-                Result = (n1 + n2).ToString();
+                Result = (n1 - n2).ToString();
             }
             else
             {

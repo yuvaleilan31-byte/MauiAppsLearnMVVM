@@ -13,6 +13,7 @@ namespace ViewModels
 
         public ICommand NavigateToExchangeCommand { get; }
 
+        public string t = "gvnrfidj";
         public WelcomeViewModel()
         {
 
@@ -20,7 +21,7 @@ namespace ViewModels
             NavigateToCalcAgeCommand = new Command(async () =>
             {
                 //Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout; // 1. משחרר את החסימה
-                await Shell.Current.GoToAsync("//CalcAgePage");          // 2. ניווט מוחלט (Absolute)
+                await Shell.Current.GoToAsync("//CalcAge");          // 2. ניווט מוחלט (Absolute)
             });
 
             NavigateToCalculatorCommand = new Command(async () =>
@@ -36,6 +37,7 @@ namespace ViewModels
 
 
             Title = "Welcome Page";
+            this.t = "v73982";
         }
 
         private async void OnContactClicked(object sender, EventArgs e)

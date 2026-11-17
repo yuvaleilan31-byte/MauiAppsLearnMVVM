@@ -13,6 +13,12 @@
                FontSize="28" 
                FontAttributes="Bold" 
                HorizontalOptions="Center" />
+        <Button Text="return to welcome page"
+                Command="{Binding NavigateToWelcomeCommand}"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HeightRequest="48"
+                Margin="0,5,0,0" />
 
         <!-- תיבות קלט למספרים -->
         <Entry Text="{Binding Num1}" 
@@ -27,7 +33,7 @@
 
         <!-- כפתורי פעולות החשבון -->
         <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="10" HeightRequest="50">
-            <Button Grid.Column="0" Text="+" Command="{Binding AddCommand}" Clicked="" FontSize="20" />
+            <Button Grid.Column="0" Text="+" Command="{Binding AddCommand}"  FontSize="20" />
             <Button Grid.Column="1" Text="-" Command="{Binding SubtractCommand}"  FontSize="20" />
             <Button Grid.Column="2" Text="*" Command="{Binding MultiplyCommand}"  FontSize="20" />
             <Button Grid.Column="3" Text="/" Command="{Binding DivideCommand}" FontSize="20" />

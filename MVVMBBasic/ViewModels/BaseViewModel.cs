@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace ViewModels;
 
@@ -13,6 +14,16 @@ public abstract class BaseViewModel : INotifyPropertyChanged
     private string _title = string.Empty;
 
     public event PropertyChangedEventHandler? PropertyChanged;
+
+    public ICommand NavigateToWelcomeCommand {get; private set;}
+
+    public BaseViewModel()
+    {
+        this.NavigateToWelcomeCommand = new Command(async () =>
+        {
+            await Shell.Current.GoToAsync("//WelcomePage");
+        });
+    }
 
     /// <summary>
     /// האם מתבצעת פעולת טעינה ברקע (עבור מחוון טעינה ActivityIndicator)
@@ -30,6 +41,8 @@ public abstract class BaseViewModel : INotifyPropertyChanged
             }
         }
     }
+
+
 
 
     public bool IsNotLoading => !IsLoading;

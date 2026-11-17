@@ -8,7 +8,7 @@ namespace ViewModels
     public class CalcAgeViewModel : BaseViewModel
     {
         public ICommand CalculateAgeCommand { get; }
-        public CalcAgeViewModel()
+        public CalcAgeViewModel():base()
         {
             Title = "דף חישוב גיל";
             CalculateAgeCommand = new Command(CalculateAge);

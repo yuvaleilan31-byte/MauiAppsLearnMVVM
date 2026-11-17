@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Text;
 using System.Windows.Input;
 
 namespace ViewModels
 {
-    internal class ExchangeViewModel:BaseViewModel
+    public class ExchangeViewModel:BaseViewModel
     {
-        public ICommand ExchangeCommand {  get; }
+        public ICommand ExchangeCommand { get; } 
 
         private static Dictionary<string, double> dict = new Dictionary<string, double> { { "Euro", 5 }, { "Dolar", 3.2 }, { "Yen",0.02 } };
         private  static List<string> _options = new List<string>(ExchangeViewModel.dict.Keys);
@@ -64,16 +65,17 @@ namespace ViewModels
 
 
 
-        public ExchangeViewModel()
+        public ExchangeViewModel():base()
         {
-            ExchangeCommand = new Command(Exchange); ;
+           
+            ExchangeCommand = new Command(Exchange) ;
             Title = "Exchange";
 
         }
         public void Exchange()
         {
-            if (int.TryParse(_result, out int i)) {
-                this.Result = (i / ExchangeViewModel.dict[this._selectedOption]).ToString();
+            if (int.TryParse(_sheckels, out int i)) {
+                Result = (i / ExchangeViewModel.dict[this._selectedOption]).ToString();
                     
             }
         }

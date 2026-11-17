@@ -6,8 +6,18 @@
              x:DataType="vm:ExchangeViewModel"
              Title="{Binding Title}"                  
              Shell.FlyoutBehavior="Disabled">
-
+   
+    
+    
     <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+        <Button Text="return to welcome page"
+             Command="{Binding NavigateToWelcomeCommand}"
+             FontAttributes="Bold"
+             CornerRadius="8"
+             HeightRequest="48"
+             Margin="0,5,0,0" />
+        
         <Label Text="הזן כמות (בשקלים)"></Label>
         <Entry Text="{Binding Sheckels}" 
            Placeholder="שקלים" 
@@ -16,7 +26,7 @@
         <Label Text="בחר מטבע"></Label>
         <Picker ItemsSource="{Binding Options}" SelectedItem="{Binding SelectedOption}" />
 
-        <Button Grid.Column="0" Text="המר" Command="{Binding ExchangeCommand}" Clicked="" FontSize="20" />
+        <Button Grid.Column="0" Text="המר" Command="{Binding ExchangeCommand}" FontSize="20" />
 
 
 

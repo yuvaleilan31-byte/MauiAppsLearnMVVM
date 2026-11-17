@@ -6,8 +6,27 @@
     xmlns:local="clr-namespace:MVVMBBasic"
     xmlns:views="clr-namespace:Views"
     Title="MVVMBBasic">
+    
 
-
+    <FlyoutItem Title="Welcome page">
+        <ShellContent
+        Title="Welcome page"
+        Route="WelcomePage"
+        ContentTemplate="{DataTemplate views:WelcomePage}"/>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Exchanger">
+        <ShellContent
+        Title="Exchanger"
+        Route="ExchangePage"
+        ContentTemplate="{DataTemplate views:ExchangePage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Math Calculator">
+        <ShellContent
+    Title="Math Calculator"
+    Route="CalculatorPage"
+    ContentTemplate="{DataTemplate views:CalculatorPage}"/>
+    </FlyoutItem>
     <FlyoutItem Title="Calculator Age">
         <ShellContent
         Title="Calculator Age"
@@ -15,11 +34,11 @@
         ContentTemplate="{DataTemplate views:CalcAgePage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Math Calculator">
-        <ShellContent
-        Title="Math Calculator"
-        Route="CalculatorPage"
-        ContentTemplate="{DataTemplate views:CalculatorPage}"/>
-    </FlyoutItem>
+
+    
+
+    
+
+
 
 </Shell>

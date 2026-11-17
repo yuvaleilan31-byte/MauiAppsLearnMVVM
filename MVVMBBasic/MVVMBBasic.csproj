@@ -70,20 +70,25 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Compile Update="Views\CalcAge.xaml.cs">
-	    <DependentUpon>CalcAge.xaml</DependentUpon>
+	<!-- ItemGroup>
+	  <Compile Update="Views\WelcomePage.xaml">
+	    <DependentUpon>WelcomePage.xaml</DependentUpon>
 	  </Compile>
-	</ItemGroup>
+	</ItemGroup> -->
 
+	
+	
 	<ItemGroup>
+		<MauiXaml Update="Views\WelcomePage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	  <MauiXaml Update="Views\CalculatorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ExchangePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\WelcomePage.xaml">
+	  <MauiXaml Update="Views\CalcAge.xaml.cs">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

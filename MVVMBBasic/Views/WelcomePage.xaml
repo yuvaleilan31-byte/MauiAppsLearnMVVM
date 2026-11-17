@@ -50,6 +50,7 @@
                         CornerRadius="8"
                         HeightRequest="48"
                         Margin="0,5,0,0" />
+                
 
                 <Button Text="Exchange"
                         Command="{Binding NavigateToExchangeCommand}"
